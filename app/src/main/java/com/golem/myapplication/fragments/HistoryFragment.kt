@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.golem.myapplication.audio.withSound
 import com.golem.myapplication.databinding.FragmentHistoryBinding
 
 class HistoryFragment : Fragment() {
@@ -24,7 +25,8 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonBack.setOnClickListener {
+        // Кнопка назад со звуком
+        binding.buttonBack.withSound(requireContext()) {
             findNavController().navigateUp()
         }
     }

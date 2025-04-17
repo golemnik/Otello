@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.golem.myapplication.audio.withSound
 import com.golem.myapplication.databinding.FragmentFirstBinding
 
 /**
@@ -27,19 +28,20 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonStartGame.setOnClickListener {
+        // Использование расширения для кнопок со звуком
+        binding.buttonStartGame.withSound(requireContext()) {
             findNavController().navigate(R.id.action_FirstFragment_to_gameFragment)
         }
 
-        binding.buttonSettings.setOnClickListener {
+        binding.buttonSettings.withSound(requireContext()) {
             findNavController().navigate(R.id.action_FirstFragment_to_settingsFragment)
         }
 
-        binding.buttonHistory.setOnClickListener {
+        binding.buttonHistory.withSound(requireContext()) {
             findNavController().navigate(R.id.action_FirstFragment_to_historyFragment)
         }
 
-        binding.buttonExit.setOnClickListener {
+        binding.buttonExit.withSound(requireContext()) {
             requireActivity().finish()
         }
     }
