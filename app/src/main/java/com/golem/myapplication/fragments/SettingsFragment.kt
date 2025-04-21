@@ -13,11 +13,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.findNavController
 import com.golem.myapplication.databinding.FragmentSettingsBinding
 import androidx.core.content.edit
-import androidx.lifecycle.lifecycleScope
-import com.golem.myapplication.R
 import com.golem.myapplication.audio.GameAudioManager
 import com.golem.myapplication.audio.withSound
-import kotlinx.coroutines.launch
 
 class SettingsFragment : Fragment() {
 
@@ -178,11 +175,11 @@ class SettingsFragment : Fragment() {
 
         // Звук кнопки будет потерян при пересоздании, но вместо попыток фиксить это,
         // просто предупреждаем пользователя
-        Toast.makeText(
-            requireContext(),
-            "Тема изменена. Для полного применения перезапустите приложение.",
-            Toast.LENGTH_SHORT
-        ).show()
+//        Toast.makeText(
+//            requireContext(),
+//            "Тема изменена. Для полного применения перезапустите приложение.",
+//            Toast.LENGTH_SHORT
+//        ).show()
     }
 
     override fun onDestroyView() {

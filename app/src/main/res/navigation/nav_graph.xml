@@ -32,8 +32,8 @@
         android:label="Otello"
         tools:layout="@layout/fragment_first">
         <action
-            android:id="@+id/action_FirstFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            android:id="@+id/action_FirstFragment_to_gameSetupFragment"
+            app:destination="@id/gameSetupFragment" />
         <action
             android:id="@+id/action_FirstFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
@@ -43,10 +43,26 @@
     </fragment>
 
     <fragment
-        android:id="@+id/gameFragment"
-        android:name="com.golem.myapplication.fragments.GameFragment"
-        android:label="Игра"
-        tools:layout="@layout/fragment_game" />
+        android:id="@+id/gameSetupFragment"
+        android:name="com.golem.myapplication.game.GameSetupFragment"
+        android:label="Настройка игры"
+        tools:layout="@layout/fragment_game_setup">
+        <action
+            android:id="@+id/action_gameSetupFragment_to_gamePlayFragment"
+            app:destination="@id/gamePlayFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gamePlayFragment"
+        android:name="com.golem.myapplication.game.GamePlayFragment"
+        android:label="Реверси"
+        tools:layout="@layout/fragment_game_play">
+        <action
+            android:id="@+id/action_gamePlayFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment"
+            app:popUpTo="@id/FirstFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/settingsFragment"

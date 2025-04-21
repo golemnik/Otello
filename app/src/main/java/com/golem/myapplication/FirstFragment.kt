@@ -9,9 +9,6 @@ import androidx.navigation.fragment.findNavController
 import com.golem.myapplication.audio.withSound
 import com.golem.myapplication.databinding.FragmentFirstBinding
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
@@ -22,16 +19,21 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Использование расширения для кнопок со звуком
         binding.buttonStartGame.withSound(requireContext()) {
-            findNavController().navigate(R.id.action_FirstFragment_to_gameFragment)
+            findNavController().navigate(R.id.action_FirstFragment_to_gameSetupFragment)
         }
+
+        // Использование расширения для кнопок со звуком
+//        binding.buttonStartGame.withSound(requireContext()) {
+//            findNavController().navigate(R.id.action_FirstFragment_to_gameSetupFragment)
+//        }
 
         binding.buttonSettings.withSound(requireContext()) {
             findNavController().navigate(R.id.action_FirstFragment_to_settingsFragment)
